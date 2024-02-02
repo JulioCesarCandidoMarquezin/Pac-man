@@ -6,13 +6,10 @@ audio_play_sound(soundIntermission, 7, false)
 score += 500
 
 global.power = true
-var protect = true
 
 with(objPhant) {
 	if sprite_index != sprFearPhant {
 		sprite_start = sprite_index
-		hspeed_start = hspeed
-		vspeed_start = vspeed
 	}
 	
 	sprite_index = sprFearPhant
@@ -23,4 +20,7 @@ with(objPhant) {
 }
 instance_destroy(other)
 
-alarm[0] = room_speed * audio_sound_length(soundIntermission)
+fear_time = room_speed * audio_sound_length(soundIntermission)
+exiting_fear_time = fear_time + (3 * room_speed)
+alarm[0] = fear_time
+alarm[1] = exiting_fear_time

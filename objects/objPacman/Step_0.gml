@@ -1,6 +1,14 @@
 if (global.golpe) || audio_is_playing(soundBegin) exit
 
-if keyboard_check_pressed(vk_anykey) objController.iniciado = true
+if (
+keyboard_check_pressed(vk_left)
+||
+keyboard_check_pressed(vk_right)
+||
+keyboard_check_pressed(vk_up)
+||
+keyboard_check_pressed(vk_down)
+) objController.iniciado = true
 
 if keyboard_check(vk_right) && place_free(x + 1, y) && place_snapped(64, 64){
 	direction = 0
