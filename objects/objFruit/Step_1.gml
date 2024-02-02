@@ -1,0 +1,1 @@
+if audio_is_playing(soundBegin) instance_destroy(self)

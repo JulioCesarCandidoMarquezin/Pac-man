@@ -1,0 +1,1 @@
+score_point = 100
